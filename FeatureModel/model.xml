@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="Restaurante">
+            <and mandatory="true" name="Cardápio">
+                <or mandatory="true" name="Cadastrar Cardápio">
+                    <or name="Promoções">
+                        <feature name="do Dia"/>
+                        <feature name="da Semana"/>
+                        <feature name="do Período"/>
+                    </or>
+                    <feature name="Itens"/>
+                    <feature name="Categoria"/>
+                </or>
+                <feature name="Mostrar Cardápio"/>
+            </and>
+            <and mandatory="true" name="Pedido">
+                <or mandatory="true" name="Gerenciar Pedido">
+                    <feature name="Adicionar"/>
+                    <feature name="Alterar"/>
+                    <feature name="Ecluir"/>
+                </or>
+                <alt mandatory="true" name="Forma do Pedido">
+                    <feature name="Carrinho"/>
+                    <feature name="Comanda"/>
+                    <feature name="Sistema"/>
+                </alt>
+                <alt name="Endereço de Entrega">
+                    <or name="Informado">
+                        <feature name="Endereço"/>
+                        <feature name="CEP"/>
+                    </or>
+                    <alt name="Cadastrado">
+                        <feature name="Telefone"/>
+                        <feature name="CPF"/>
+                        <feature name="Nome"/>
+                        <feature name="Login"/>
+                    </alt>
+                </alt>
+            </and>
+            <or mandatory="true" name="Forma de Pagamento">
+                <or name="Cartão">
+                    <feature name="Débito"/>
+                    <feature name="Crédito"/>
+                    <feature name="Ticket"/>
+                </or>
+                <feature name="Transferência Bancária"/>
+                <or name="Carteiras Virtuais">
+                    <feature name="PicPay"/>
+                    <feature name="ApplePay"/>
+                    <feature name="PagSeguro"/>
+                    <feature name="PayPal"/>
+                    <feature name="GooglePay"/>
+                </or>
+                <feature name="Dinheiro"/>
+            </or>
+            <and name="Usuário">
+                <or mandatory="true" name="Cadastro">
+                    <feature name="Criar"/>
+                    <or name="Alterar Informações">
+                        <feature name="Nome Completo"/>
+                        <feature name="Idade"/>
+                        <feature name="E-mail"/>
+                        <feature name="Endereços"/>
+                        <feature name="Contatos"/>
+                    </or>
+                    <feature name="Remover"/>
+                </or>
+                <or mandatory="true" name="Login de Usuário">
+                    <feature name="Email"/>
+                    <feature name="Google"/>
+                    <feature name="Facebook"/>
+                </or>
+                <and name="Histórico">
+                    <or mandatory="true" name="Filtro">
+                        <feature name="Data"/>
+                        <feature name="Menor Valor"/>
+                        <feature name="Maior Valor"/>
+                    </or>
+                    <feature mandatory="true" name="Listagem"/>
+                </and>
+            </and>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
