@@ -4,7 +4,7 @@
     <struct>
         <and abstract="true" mandatory="true" name="Restaurante">
             <and mandatory="true" name="Cardápio">
-                <or mandatory="true" name="Cadastrar Cardápio">
+                <or mandatory="true" name="Cadastro do Cardápio">
                     <or name="Promoções">
                         <feature name="do Dia"/>
                         <feature name="da Semana"/>
@@ -13,7 +13,10 @@
                     <feature name="Itens"/>
                     <feature name="Categoria"/>
                 </or>
-                <feature name="Mostrar Cardápio"/>
+                <alt name="Amostragem">
+                    <feature name="Digital"/>
+                    <feature name="Físico"/>
+                </alt>
             </and>
             <and mandatory="true" name="Pedido">
                 <or mandatory="true" name="Gerenciar Pedido">
