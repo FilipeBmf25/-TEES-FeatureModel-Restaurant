@@ -13,10 +13,10 @@
                     <feature name="Itens"/>
                     <feature name="Categoria"/>
                 </or>
-                <alt name="Amostragem">
+                <and name="Amostragem">
                     <feature name="Digital"/>
                     <feature name="Físico"/>
-                </alt>
+                </and>
             </and>
             <and mandatory="true" name="Pedido">
                 <or mandatory="true" name="Gerenciar Pedido">
